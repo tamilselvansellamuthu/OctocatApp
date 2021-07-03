@@ -1,0 +1,16 @@
+C:\Users\Tamil\OctocatApp\bin\Release\net5.0\OctocatApp.exe
+C:\Users\Tamil\OctocatApp\bin\Release\net5.0\OctocatApp.deps.json
+C:\Users\Tamil\OctocatApp\bin\Release\net5.0\OctocatApp.runtimeconfig.json
+C:\Users\Tamil\OctocatApp\bin\Release\net5.0\OctocatApp.runtimeconfig.dev.json
+C:\Users\Tamil\OctocatApp\bin\Release\net5.0\OctocatApp.dll
+C:\Users\Tamil\OctocatApp\bin\Release\net5.0\ref\OctocatApp.dll
+C:\Users\Tamil\OctocatApp\bin\Release\net5.0\OctocatApp.pdb
+C:\Users\Tamil\OctocatApp\obj\Release\net5.0\OctocatApp.csproj.AssemblyReference.cache
+C:\Users\Tamil\OctocatApp\obj\Release\net5.0\OctocatApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tamil\OctocatApp\obj\Release\net5.0\OctocatApp.AssemblyInfoInputs.cache
+C:\Users\Tamil\OctocatApp\obj\Release\net5.0\OctocatApp.AssemblyInfo.cs
+C:\Users\Tamil\OctocatApp\obj\Release\net5.0\OctocatApp.csproj.CoreCompileInputs.cache
+C:\Users\Tamil\OctocatApp\obj\Release\net5.0\OctocatApp.dll
+C:\Users\Tamil\OctocatApp\obj\Release\net5.0\ref\OctocatApp.dll
+C:\Users\Tamil\OctocatApp\obj\Release\net5.0\OctocatApp.pdb
+C:\Users\Tamil\OctocatApp\obj\Release\net5.0\OctocatApp.genruntimeconfig.cache
