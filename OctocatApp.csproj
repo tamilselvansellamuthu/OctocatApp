@@ -6,4 +6,8 @@
   <RepositoryUrl>https://github.com/tamilselvansellamuthu/OctocatApp</RepositoryUrl>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="OctocatApp" Version="1.0.0" />
+  </ItemGroup>
+
 </Project>
