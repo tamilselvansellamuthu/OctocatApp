@@ -19,13 +19,16 @@ jobs:
         dotnet-version: 5.0.x
     - name: Restore dependencies
       run: dotnet restore
-#    - name: Build
-#      run: dotnet build --no-restore
-#    - name: Test
-#      run: dotnet test --no-build --verbosity normal
+    - name: Build
+      run: dotnet msbuild --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+    - name: RunOctocatAppDLL
+      run: dotnet run bin\Debug\net5.0\OctocatApp.dll
     - name: Package
       run: dotnet pack --configuration Release
     - name: AddSource
       run: dotnet nuget add source "https://nuget.pkg.github.com/tamilselvansellamuthu/index.json" -n "github"
     - name: Push
       run: dotnet nuget push "bin/Release/OctocatApp.1.0.0.nupkg"  --api-key ${{ secrets.OctocatAppPAT }} --source "github"
+      
