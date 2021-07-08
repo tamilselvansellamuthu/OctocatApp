@@ -25,5 +25,7 @@ jobs:
 #      run: dotnet test --no-build --verbosity normal
     - name: Package
       run: dotnet pack --configuration Release
+    - name: AddSource
+      run: dotnet nuget add source "https://nuget.pkg.github.com/tamilselvansellamuthu/index.json" -n "github"
     - name: Push
       run: dotnet nuget push "bin/Release/OctocatApp.1.0.0.nupkg"  --api-key ${{ secrets.OctocatAppPAT }} --source "github"
