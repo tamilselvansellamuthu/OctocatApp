@@ -2,6 +2,7 @@ using System;
 using System.Globalization;
 
 namespace OctocatApp
+{
 // {
 //     class Program
 //     {
@@ -34,4 +35,5 @@ public class Example
                            utcDate.ToString(culture), utcDate.Kind);
       }
    }
+}
 }
