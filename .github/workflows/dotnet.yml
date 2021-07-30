@@ -20,6 +20,7 @@ jobs:
     - name: Check current directory
       run: pwd
     - name: Install dependencies
+#      run: dotnet add package Newtonsoft.Json --version 12.0.1
       run: dotnet add /home/runner/work/OctocatApp/OctocatApp package OctokittenApp --version 1.0.0
     - name: Restore dependencies
       run: dotnet restore
