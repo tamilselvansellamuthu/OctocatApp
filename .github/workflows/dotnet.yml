@@ -17,25 +17,31 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
- #   - name: Check current directory
- #     run: pwd
-    - name: AddSource
-      run: dotnet nuget add source "https://nuget.pkg.github.com/tamilselvansellamuthu/index.json" -n "github" 
-#    - name: Install dependencies
-#      run: dotnet add package Newtonsoft.Json --version 12.0.1
-#      run: dotnet add /home/runner/work/OctocatApp/OctocatApp package OctokittenApp --version 1.0.0 --source "github"
-    - name: Restore dependencies 
-      run: dotnet restore -s https://nuget.pkg.github.com/tamilselvansellamuthu/index.json
+    
+    - name: Install dependencies
+      run: dotnet add package Newtonsoft.Json --version 12.0.1
+
+#    - name: Install dependencies 
+#      run: dotnet restore -s https://nuget.pkg.github.com/tamilselvansellamuthu/index.json
+      
 #    - name: Build
 #      run: dotnet build --no-restore
+
     - name: Build
       run: dotnet msbuild
+      
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: RunOctocatAppDLL
-      run: dotnet run bin\Debug\net5.0\OctocatApp.dll
+    
     - name: Package
       run: dotnet pack --configuration Release
+      
+    - name: AddSource
+      run: dotnet nuget add source "https://nuget.pkg.github.com/tamilselvansellamuthu/index.json" -n "github" 
+      
     - name: Push
       run: dotnet nuget push "bin/Release/OctocatApp.1.0.0.nupkg"  --api-key ${{ secrets.TOKEN_GITHUB }} --source "github"
+      
+    - name: RunOctocatAppDLL
+      run: dotnet run bin\Debug\net5.0\OctocatApp.dll
       #      
