@@ -1,47 +1,62 @@
-name: .NET
+#Name of the workflow.
+name: Sample dot net workflow
 
+#Workflow starts when below events occurs. Ex. code pushed to main branch or pull_request raised to main branch.
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 
+#Set of Job(s) runs for the event. Ex. build is a job.
 jobs:
   build:
 
+#Environment(s) used to run. Ex.ubuntu, mac-os, windows.
     runs-on: ubuntu-latest
 
+#Set of step(s) for the job(ex. build)
     steps:
+    
+    #Checkout the code. uses opensource action (https://github.com/actions/checkout)
     - uses: actions/checkout@v2
+    
+    #To Set up dotnet 5.0 environment using opensource action (https://github.com/actions/setup-dotnet)
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
     
+    #To Add application dependencies to the project.
     - name: Install dependencies
       run: dotnet add package Newtonsoft.Json --version 12.0.1
 
-#    - name: Install dependencies 
-#      run: dotnet restore -s https://nuget.pkg.github.com/tamilselvansellamuthu/index.json
-      
-#    - name: Build
-#      run: dotnet build --no-restore
+    #To resolve application dependencies.
+    - name: Install dependencies 
+      run: dotnet restore 
 
+    #To build dotnet application using MSBuild
     - name: Build
       run: dotnet msbuild
       
+    #To Run application tests
     - name: Test
       run: dotnet test --no-build --verbosity normal
     
+    #To Packackage dotnet Application
     - name: Package
       run: dotnet pack --configuration Release
       
+    #To Add nuget artifacts repository as source to push artifacts.
     - name: AddSource
       run: dotnet nuget add source "https://nuget.pkg.github.com/tamilselvansellamuthu/index.json" -n "github" 
       
+    #To Push nuget package to artifacts repository using GitHub Secrets.
     - name: Push
       run: dotnet nuget push "bin/Release/OctocatApp.1.0.0.nupkg"  --api-key ${{ secrets.TOKEN_GITHUB }} --source "github"
       
+    #To Run application in backend.
     - name: RunOctocatAppDLL
       run: dotnet run bin\Debug\net5.0\OctocatApp.dll
-      #      
+      
+    #EOF
