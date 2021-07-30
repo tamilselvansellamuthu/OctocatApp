@@ -4,9 +4,6 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
   <RepositoryUrl>https://github.com/tamilselvansellamuthu/OctocatApp</RepositoryUrl>
-  <RepositoryUrl>https://github.com/tamilselvansellamuthu/OctokittenApp</RepositoryUrl>
   </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="OctokittenApp" Version="1.0.0" />
-  </ItemGroup>
+  
 </Project>
