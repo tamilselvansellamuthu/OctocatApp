@@ -27,7 +27,7 @@ public class Example
 
       foreach (var cultureName in cultureNames) {
          var culture = new CultureInfo(cultureName);
-         Console.WriteLine("Hello World!");
+         Console.WriteLine("Hello World this is OctocatApp!");
          Console.WriteLine("{0}:", culture.NativeName);
          Console.WriteLine("   Local date and time: {0}, {1:G}",
                            localDate.ToString(culture), localDate.Kind);
