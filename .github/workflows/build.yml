@@ -44,6 +44,6 @@ jobs:
 #          <insert_your_build_command>
 #          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"OctocatApp" /o:"tamilselvansellamuthu" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"tamilselvansellamuthu_OctocatApp" /o:"tamilselvansellamuthu" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
