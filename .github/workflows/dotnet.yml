@@ -36,8 +36,12 @@ jobs:
       run: dotnet restore 
 
     #To build dotnet application using MSBuild
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    #To build dotnet application using MSBuild
     - name: Build
-      run: dotnet msbuild
+      run: msbuild
       
     #To Run application tests
     - name: Test
