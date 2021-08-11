@@ -54,7 +54,7 @@ jobs:
       
     #To Push nuget package to artifacts repository using GitHub Secrets.
     - name: Push
-      run: dotnet nuget push "bin/Release/OctocatApp.1.0.0.nupkg"  --api-key ${{ secrets.TOKEN_GITHUB }} --source "github"
+      run: dotnet nuget push "bin/Release/OctocatApp.1.0.0.nupkg"  --api-key ${{ secrets.WINDOWS_NEXUS_API_KEY }} --source "github"
       
     #To Run application in backend.
     - name: RunOctocatAppDLL
