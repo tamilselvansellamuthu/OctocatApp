@@ -13,7 +13,7 @@ jobs:
   build:
 
 #Environment(s) used to run. Ex.ubuntu, mac-os, windows.
-    runs-on: ubuntu-latest
+    runs-on: [windows-latest, ubuntu-latest]
 
 #Set of step(s) for the job(ex. build)
     steps:
