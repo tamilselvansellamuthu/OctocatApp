@@ -51,6 +51,10 @@ jobs:
     #- name: AddSource
     #  #run: dotnet nuget add source "https://nuget.pkg.github.com/tamilselvansellamuthu/index.json" -n "github" 
     #  run: dotnet nuget add source "http://35.224.72.240:8081/repository/nuget-hosted/index.json" -n "nexus" 
+    
+    #To Add nuget artifacts repository as source to push artifacts.
+    - name: AddSource
+      run: dotnet nuget add source "http://35.224.72.240:8081/repository/nuget-hosted/index.json" --name "nexus" --username  ${{ secrets.WINDOWS_NEXUS_USER_NAME }} --password ${{ secrets.WINDOWS_NEXUS_PASSWORD }}
       
     #To Push nuget package to artifacts repository using GitHub Secrets.
     - name: Push
